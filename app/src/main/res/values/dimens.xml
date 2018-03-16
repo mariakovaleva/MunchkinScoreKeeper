@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="current_score">40sp</dimen>
+    <dimen name="increment_button_margin">2dp</dimen>
+    <dimen name="line_margin">60dp</dimen>
+    <dimen name="score_labels">14sp</dimen>
+    <dimen name="player_label">14sp</dimen>
+    <dimen name="info_text_view">20sp</dimen>
+    <dimen name="top_and_bottom">16dp</dimen>
+    <dimen name="app_title">28sp</dimen>
+</resources>

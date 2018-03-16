@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">MunchkinCounter</string>
+    <string name="app_title">Munchkin Score Counter</string>
+    <string name="zero">0</string>
+    <string name="initial_info">The first player to reach level 10 wins</string>
+    <string name="player_one_won">Player 1 won!</string>
+    <string name="player_two_won">Player 2 won!</string>
+    <string name="player_three_won">Player 3 won!</string>
+    <string name="reset_button">reset score</string>
+    <string name="decrement">-1</string>
+    <string name="increment">+1</string>
+    <string name="level_label">Level</string>
+    <string name="strength_label">Strength</string>
+    <string name="player_1_name">Player 1</string>
+    <string name="player_2_name">Player 2</string>
+    <string name="player_3_name">Player 3</string>
+    <string name="description">This is a background image</string>
+</resources>

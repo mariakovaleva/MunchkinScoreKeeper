@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/background" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/top_and_bottom"
+        android:fontFamily="@font/roboto_condensed_bold_italic"
+        android:text="@string/app_title"
+        android:textColor="@color/title_color"
+        android:textSize="@dimen/app_title" />
+
+    <TextView
+        android:id="@+id/info_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/scores"
+        android:layout_below="@id/textView"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/roboto_condensed_italic"
+        android:gravity="center"
+        android:text="@string/initial_info"
+        android:textColor="@color/info_text_color"
+        android:textSize="@dimen/info_text_view" />
+
+    <LinearLayout
+        android:id="@+id/scores"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginStart="24dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/player1_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:backgroundTint="@android:color/transparent"
+                android:cursorVisible="true"
+                android:fontFamily="@font/roboto_condensed_regular"
+                android:inputType="text"
+                android:text="@string/player_1_name"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/player_label" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="4dp"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/roboto_condensed_light"
+                android:text="@string/level_label"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/score_labels" />
+
+            <TextView
+                android:id="@+id/player1_level"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="24dp"
+                android:fontFamily="@font/roboto_condensed_light"
+                android:text="@string/zero"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/current_score" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:orientation="horizontal">
+
+
+                <Button
+                    android:id="@+id/leveldown_player1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/increment_button_margin"
+                    android:layout_marginRight="@dimen/increment_button_margin"
+                    android:layout_weight="1"
+                    android:background="@color/increment_button_color"
+                    android:fontFamily="@font/roboto_condensed_regular"
+                    android:onClick="minusOneLevelPlayer1"
+                    android:text="@string/decrement"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/levelup_player1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/increment_button_margin"
+                    android:layout_marginStart="@dimen/increment_button_margin"
+                    android:layout_weight="1"
+                    android:background="@color/increment_button_color"
+                    android:fontFamily="@font/roboto_condensed_regular"
+                    android:onClick="plusOneLevelPlayer1"
+                    android:text="@string/increment"
+                    android:textAllCaps="false" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="4dp"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/roboto_condensed_light"
+                android:text="@string/strength_label"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/score_labels" />
+
+            <TextView
+                android:id="@+id/player1_strength"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="24dp"
+                android:fontFamily="@font/roboto_condensed_light"
+                android:text="@string/zero"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/current_score" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/strengthdown_player1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/increment_button_margin"
+                    android:layout_marginRight="@dimen/increment_button_margin"
+                    android:layout_weight="1"
+                    android:background="@color/increment_button_color"
+                    android:fontFamily="@font/roboto_condensed_regular"
+                    android:onClick="minusOneStrengthPlayer1"
+                    android:text="@string/decrement"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/strengthup_player1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/increment_button_margin"
+                    android:layout_marginStart="@dimen/increment_button_margin"
+                    android:layout_weight="1"
+                    android:background="@color/increment_button_color"
+                    android:fontFamily="@font/roboto_condensed_regular"
+                    android:onClick="plusOneStrengthPlayer1"
+                    android:text="@string/increment"
+                    android:textAllCaps="false" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="20dp"
+            android:layout_weight="0.01"
+            android:background="@color/line_color" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/player2_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:backgroundTint="@android:color/transparent"
+                android:cursorVisible="true"
+                android:fontFamily="@font/roboto_condensed_regular"
+                android:inputType="text"
+                android:text="@string/player_2_name"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/player_label" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="4dp"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/roboto_condensed_light"
+                android:text="@string/level_label"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/score_labels" />
+
+            <TextView
+                android:id="@+id/player2_level"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="24dp"
+                android:fontFamily="@font/roboto_condensed_light"
+                android:text="@string/zero"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/current_score" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/leveldown_player2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/increment_button_margin"
+                    android:layout_marginRight="@dimen/increment_button_margin"
+                    android:layout_weight="1"
+                    android:background="@color/increment_button_color"
+                    android:fontFamily="@font/roboto_condensed_regular"
+                    android:onClick="minusOneLevelPlayer2"
+                    android:text="@string/decrement"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/levelup_player2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/increment_button_margin"
+                    android:layout_marginStart="@dimen/increment_button_margin"
+                    android:layout_weight="1"
+                    android:background="@color/increment_button_color"
+                    android:fontFamily="@font/roboto_condensed_regular"
+                    android:onClick="plusOneLevelPlayer2"
+                    android:text="@string/increment"
+                    android:textAllCaps="false" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="4dp"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/roboto_condensed_light"
+                android:text="@string/strength_label"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/score_labels" />
+
+            <TextView
+                android:id="@+id/player2_strength"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="24dp"
+                android:fontFamily="@font/roboto_condensed_light"
+                android:text="@string/zero"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/current_score" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:orientation="horizontal">
+
+
+                <Button
+                    android:id="@+id/strengthdown_player2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/increment_button_margin"
+                    android:layout_marginRight="@dimen/increment_button_margin"
+                    android:layout_weight="1"
+                    android:background="@color/increment_button_color"
+                    android:fontFamily="@font/roboto_condensed_regular"
+                    android:onClick="minusOneStrengthPlayer2"
+                    android:text="@string/decrement"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/strengthup_player2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/increment_button_margin"
+                    android:layout_marginStart="@dimen/increment_button_margin"
+                    android:layout_weight="1"
+                    android:background="@color/increment_button_color"
+                    android:fontFamily="@font/roboto_condensed_regular"
+                    android:onClick="plusOneStrengthPlayer2"
+                    android:text="@string/increment"
+                    android:textAllCaps="false" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="20dp"
+            android:layout_weight="0.01"
+            android:background="@color/line_color" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:layout_marginRight="24dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/player3_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:backgroundTint="@android:color/transparent"
+                android:cursorVisible="true"
+                android:fontFamily="@font/roboto_condensed_regular"
+                android:inputType="text"
+                android:text="@string/player_3_name"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/player_label" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="4dp"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/roboto_condensed_light"
+                android:text="@string/level_label"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/score_labels" />
+
+            <TextView
+                android:id="@+id/player3_level"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="24dp"
+                android:fontFamily="@font/roboto_condensed_light"
+                android:text="@string/zero"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/current_score" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/leveldown_player3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/increment_button_margin"
+                    android:layout_marginRight="@dimen/increment_button_margin"
+                    android:layout_weight="1"
+                    android:background="@color/increment_button_color"
+                    android:fontFamily="@font/roboto_condensed_regular"
+                    android:onClick="minusOneLevelPlayer3"
+                    android:text="@string/decrement"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/levelup_player3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/increment_button_margin"
+                    android:layout_marginStart="@dimen/increment_button_margin"
+                    android:layout_weight="1"
+                    android:background="@color/increment_button_color"
+                    android:fontFamily="@font/roboto_condensed_regular"
+                    android:onClick="plusOneLevelPlayer3"
+                    android:text="@string/increment"
+                    android:textAllCaps="false" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="4dp"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/roboto_condensed_light"
+                android:text="@string/strength_label"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/score_labels" />
+
+            <TextView
+                android:id="@+id/player3_strength"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="24dp"
+                android:fontFamily="@font/roboto_condensed_light"
+                android:text="@string/zero"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/current_score" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/strengthdown_player3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/increment_button_margin"
+                    android:layout_marginRight="@dimen/increment_button_margin"
+                    android:layout_weight="1"
+                    android:background="@color/increment_button_color"
+                    android:fontFamily="@font/roboto_condensed_regular"
+                    android:onClick="minusOneStrengthPlayer3"
+                    android:text="@string/decrement"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/strengthup_player3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/increment_button_margin"
+                    android:layout_marginStart="@dimen/increment_button_margin"
+                    android:layout_weight="1"
+                    android:background="@color/increment_button_color"
+                    android:fontFamily="@font/roboto_condensed_regular"
+                    android:onClick="plusOneStrengthPlayer3"
+                    android:text="@string/increment"
+                    android:textAllCaps="false" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/reset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/top_and_bottom"
+        android:background="@color/reset_button"
+        android:fontFamily="@font/roboto_condensed_bold"
+        android:onClick="resetScore"
+        android:padding="@dimen/increment_button_margin"
+        android:text="@string/reset_button"
+        android:textAllCaps="true" />
+
+
+</RelativeLayout>
